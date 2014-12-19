@@ -77,18 +77,19 @@ function initialize() {
       }
       for (var i = 0; i < items.length; i++) {
         var latlng = new google.maps.LatLng(items[i].latitude, items[i].longitude);
-        createMarker(map, latlng, aedImage, items[i].content());
+        createMarker(map, latlng, aedImage, items[i].content(), (i + 100));
       }
     });
   }
 }
 
-function createMarker(map, latlng, icon, content) {
+function createMarker(map, latlng, icon, content, zIndex) {
   var marker = new google.maps.Marker({
     position: latlng,
     map: map,
     icon: icon,
     title: content.title,
+    zIndex: parseInt(zIndex),
     visible: true
   });
   if (content.html != undefined) {
@@ -100,6 +101,7 @@ function createMarker(map, latlng, icon, content) {
     });
   }
   if (icon == "here.png") {
+    marker.zIndex = 1;
     if (previousLocationMarker != null) {
       previousLocationMarker.setMap(null);
     }
@@ -118,7 +120,7 @@ function getLocation() {
   function successCb(position) {
     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     thisMap.setCenter(latlng);
-    createMarker(thisMap, latlng, "here.png", {title: "現在地"});
+    createMarker(thisMap, latlng, "here.png", {title: "現在地"}, 1);
   }
   function erroeCb(error) {
     var message = "ページを更新し、位置情報の取得許可をしてください!"
