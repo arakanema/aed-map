@@ -1,0 +1,15 @@
+body {
+  font-family:'Century Gothic', 'メイリオ', 'ヒラギノ角ゴ Pro W3','ＭＳ Ｐゴシック', 'Meiryo', 'osaka', 'Hiragino Kaku Gothic Pro W3', sans-serif;
+}
+.navbar-inverse .navbar-brand {
+  color: #eee;
+}
+#aedmap {
+  width: 500px;
+  height: 300px;
+}
+.scrollFix {
+  line-height: 1.35;
+  overflow: hidden;
+  white-space: nowrap;
+}
