@@ -114,16 +114,16 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successCb, erroeCb);
   } else {
-    var message = "‚¨g‚¢‚ÌŠÂ‹«‚Å‚ÍŒ»İ’n‚ğæ“¾‚Å‚«‚Ü‚¹‚ñB"
+    var message = "ãŠä½¿ã„ã®ç’°å¢ƒã§ã¯ç¾åœ¨åœ°ã‚’å–å¾—ã§ãã¾ã›ã‚“ã€‚"
     alert(message);
   }
   function successCb(position) {
     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     thisMap.setCenter(latlng);
-    createMarker(thisMap, latlng, "here.png", {title: "Œ»İ’n"}, 1);
+    createMarker(thisMap, latlng, "here.png", {title: "ç¾åœ¨åœ°"}, 1);
   }
   function erroeCb(error) {
-    var message = "ƒy[ƒW‚ğXV‚µAˆÊ’uî•ñ‚Ìæ“¾‹–‰Â‚ğ‚µ‚Ä‚­‚¾‚³‚¢!"
+    var message = "ãƒšãƒ¼ã‚¸ã‚’æ›´æ–°ã—ã€ä½ç½®æƒ…å ±ã®å–å¾—è¨±å¯ã‚’ã—ã¦ãã ã•ã„!"
     alert(message);
   }
 }
