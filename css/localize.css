@@ -5,8 +5,14 @@ body {
   color: #eee;
 }
 #aedmap {
-  width: 500px;
+  margin: 0 auto;
+  width: 100%;
   height: 300px;
+}
+.phone {
+  font-size: 110%;
+  font-weight: bold;
+  line-height: 1.4em;
 }
 .scrollFix {
   line-height: 1.35;
