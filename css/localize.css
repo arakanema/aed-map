@@ -9,6 +9,7 @@ body {
 }
 .getlocation-notice {
   font-weight: bold;
+  padding: 5px;
 }
 #aedmap {
   margin: 0 auto;
