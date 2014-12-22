@@ -23,18 +23,21 @@ function initialize() {
     document.title = $(this).text();
   });
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition( function(position) {
-      thisMap.setZoom(thisMap.getZoom() + 3);
-      var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      setMarkers(thisMap, initialLocation, aedImage, mapIdName, filename);
-    });
-  } else {
-    var initialLocation = [defaultPosition.split(',')[0], defaultPosition.split(',')[1]]
-    initialLocation = new google.maps.LatLng(initialLocation[0], initialLocation[1]);
-    setMarkers(thisMap, initialLocation, aedImage, mapIdName, filename);
-  }
+  var initialLocation = [defaultPosition.split(',')[0], defaultPosition.split(',')[1]]
+  initialLocation = new google.maps.LatLng(initialLocation[0], initialLocation[1]);
+  setMarkers(thisMap, initialLocation, aedImage, mapIdName, filename);
 
+  //if (navigator.geolocation) {
+  //  navigator.geolocation.getCurrentPosition( function(position) {
+  //    thisMap.setZoom(thisMap.getZoom() + 3);
+  //    var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  //    setMarkers(thisMap, initialLocation, aedImage, mapIdName, filename);
+  //  });
+  //} else {
+  //  var initialLocation = [defaultPosition.split(',')[0], defaultPosition.split(',')[1]]
+  //  initialLocation = new google.maps.LatLng(initialLocation[0], initialLocation[1]);
+  //  setMarkers(thisMap, initialLocation, aedImage, mapIdName, filename);
+  //}
 
   function setMarkers(map, centerPosition, aedImage, mapIdName, filename) {
     map.setCenter(centerPosition);
