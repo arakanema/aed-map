@@ -4,6 +4,12 @@ body {
 .navbar-inverse .navbar-brand {
   color: #eee;
 }
+.location-button {
+  margin: 10px;
+}
+.getlocation-notice {
+  font-weight: bold;
+}
 #aedmap {
   margin: 0 auto;
   width: 100%;

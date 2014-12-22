@@ -122,6 +122,7 @@ function getLocation() {
   }
   function successCb(position) {
     var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    if (thisMap.getZoom() < 15) thisMap.setZoom(thisMap.getZoom() + 3);
     thisMap.setCenter(latlng);
     createMarker(thisMap, latlng, "here.png", {title: "現在地"}, 1);
   }

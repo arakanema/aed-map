@@ -49,7 +49,11 @@
       <div class="row">
 
         <div id="map" class="col-xs-12 col-md-12 col-sm-12 content">
-          <div><input type="button" value="現在地を取得" name="posi" onclick="getLocation()"></div>
+          <div class="location-button">
+            <button type="button" class="btn btn-info" onclick="getLocation()">現在地を取得</button>
+            <span class="getlocation-notice">※屋内ではWiFiをONにしてご利用ください。</span>
+            <!--<input type="button" value="現在地を取得" name="posi" onclick="getLocation()">-->
+          </div>
           <div id="aedmap"></div>
         </div>
 
